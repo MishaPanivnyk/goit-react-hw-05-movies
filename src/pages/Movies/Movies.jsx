@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Movies = () => {
   const [inputValue, setInputValue] = useState('');
-  const [searchParams, setSearchParams] = useState();
+  const [searchParams, setSearchParams] = useSearchParams();
   const movieQuery = searchParams.get('query') ?? '';
   const [searchResult, setSearchResult] = useState('');
 
@@ -37,6 +37,7 @@ const Movies = () => {
         onChange={setInputValue}
         onClick={searchMovie}
       />
+      <ToastContainer autoClose={2500} />
       <Suspense fallback={<div>Loading...</div>}>
         {searchResult !== '' ? (
           <MoviesList movies={searchResult} />
