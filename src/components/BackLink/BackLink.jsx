@@ -1,4 +1,4 @@
-import { HiArrowLeft } from 'react-icons/fa';
+import { HiArrowLeft } from 'react-icons/hi';
 import PropTypes from 'prop-types';
 import { StyledLink } from './BackLink.styled';
 
