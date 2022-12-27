@@ -7,16 +7,16 @@ const Reviews = () => {
   const [reviwsHtml, setReviewsHtml] = useState('');
   const [reviewLength, setRewiewsLength] = useState(0);
   useEffect(() => {
-    getMovieReviews(movieId).then(movieData => {
+    getMovieReviews(movieId).then(data => {
       setReviewsHtml(
-        movieData.data.results.map(reviewEl => (
+        data.map(reviewEl => (
           <li key={reviewEl.id}>
             <h3>Author: {reviewEl.author}</h3>
             <p>'{reviewEl.content}'</p>
           </li>
         ))
       );
-      setRewiewsLength(movieData.data.results.length);
+      setRewiewsLength(data.length);
     });
   }, [movieId]);
   return (

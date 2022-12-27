@@ -9,9 +9,9 @@ const Cast = () => {
   const [castLength, setCastLength] = useState(0);
 
   useEffect(() => {
-    getMovieCast(movieId).then(movieData => {
+    getMovieCast(movieId).then(data => {
       setCastHtml(
-        movieData.data.cast.map(castEl => (
+        data.map(castEl => (
           <li key={castEl.cast_id}>
             <img
               src={`https://image.tmdb.org/t/p/w500${castEl.profile_path}`}
@@ -27,7 +27,7 @@ const Cast = () => {
           </li>
         ))
       );
-      setCastLength(movieData.data.cast.length);
+      setCastLength(data.length);
     });
   }, [movieId]);
 

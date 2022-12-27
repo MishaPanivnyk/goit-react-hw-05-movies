@@ -7,6 +7,7 @@ import {
   Link,
   IconMovie,
 } from './SharedLayout.styled';
+
 export const SharedLayout = () => {
   return (
     <Container>
